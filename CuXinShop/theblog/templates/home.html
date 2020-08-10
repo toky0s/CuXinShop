@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>Cu Xin Shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We sell everything, including your childhood.">
+    <meta name="theme-color" content="#00796B">
+    <link rel="icon" href="{% static 'images/axin.jpg' %}" >
+    <link rel="apple-touch-icon" href="{% static 'images/axin.jpg' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preload" as="image" href="/resources/img/sarah-dorweiler-2s9aHF4eCjI-unsplash-min.jpg">
+    <link rel="preload" as="image" href="/resources/img/alex-loup-mwINQsW2KJs-unsplash-min.jpg">
+    <link rel="preload" as="image" href="/resources/img/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg">
+    <link rel="preload" as="image" href="/resources/img/sarah-dorweiler-x2Tmfd1-SgA-unsplash-min.jpg">
+    <link rel="preload" as="image" href="/resources/img/annie-spratt-GJJo0gb7bfY-unsplash-min.jpg">
+    <link rel="preload" as="image" href="/resources/img/kari-shea-tcgMBsW4zlU-unsplash-min.jpg">
+</head>
+
+<body>
+    <header>
+        <div class="header__layer">
+            <h1>This is <span style="text-decoration: line-through;">not</span> an ecommerce site</h1>
+            <h2>It was created with lightning speed page loading speed</h2>
+            <div class="header__buttons">
+                <a class="header__buttons-main-button" href="#">shopping now</a>
+            </div>
+        </div>
+    </header>
+    <section class="sale">
+        <div class="sale__title">
+            <p>#hangtonkho</p>
+            <p>Không thích thì mua</p>
+        </div>
+        <div class="sale__flex-container">
+            <div class="item">
+                <div class="item__main">
+                    <div class="item__title">
+                        <p>Gameloft Notebook</p>
+                    </div>
+                    <div class="item__img">
+                        <img src="{% static 'images/gameloft-notebook.png' %}" alt="">
+                    </div>
+                    <div class="border-top"></div>
+                    <div class="item__info">
+                        <div class="price">
+                            <p>$50</p>
+                        </div>
+                        <div class="bio">
+                            <p>Kỉ niệm lần đầu đặt chân đến Gameloft, chứa nhiều giá trị tinh thần code lõi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item__button">
+                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__main">
+                    <div class="item__title">
+                        <p>Gucci Bag</p>
+                    </div>
+                    <div class="item__img">
+                        <img src="{% static 'images/gucci-bag-png-2.png' %}" alt="">
+                    </div>
+                    <div class="border-top"></div>
+                    <div class="item__info">
+                        <div class="price">
+                            <p>$750</p>
+                        </div>
+                        <div class="bio">
+                            <p>Có được khi mua con laptop Dell. Mang nhiều giá trị tinh thần và quá khứ.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item__button">
+                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__main">
+                    <div class="item__title">
+                        <p>Dell Inspiron</p>
+                    </div>
+                    <div class="item__img">
+                        <img src="{% static 'images/Dell-Inspiron-7380-02-1555744872.png' %}" alt="">
+                    </div>
+                    <div class="border-top"></div>
+                    <div class="item__info">
+                        <div class="price">
+                            <p>$850</p>
+                        </div>
+                        <div class="bio">
+                            Chứa nhiều code và dữ liệu đéo có giá trị gì bên trong.
+                        </div>
+                    </div>
+                </div>
+                <div class="item__button">
+                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__main">
+                    <div class="item__title">
+                        <p>A Xin</p>
+                    </div>
+                    <div class="item__img">
+                        <img src="{% static 'images/ảnh đại diện.jpg' %}" alt="">
+                    </div>
+                    <div class="border-top"></div>
+                    <div class="item__info">
+                        <div class="price">
+                            <p>$1</p>
+                        </div>
+                        <div class="bio">
+                            Cần lắm người mua.
+                        </div>
+                    </div>
+                </div>
+                <div class="item__button">
+                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sellpast">
+        <div class="sellpast__flexcontainer">
+            <div class="main-img" style="background-image: url({% static 'images/friends.png' %});">
+            </div>
+            <div class="sellpast-info">
+                <p class="sellpast-info__title">Chúng tôi bán cả quá khứ</p>
+                <p class="sellpast-info__content">Nó không thể mua bằng tiền. Nó được đánh đổi bằng thời gian, nước mắt.
+                    Bạn có thể đi đâu đó khóc rồi gửi nước mắt cho chúng tôi cũng được.</p>
+                <div class="sellpast__buy-button"><a href="#">4 giọt</a></div>
+            </div>
+        </div>
+        <div class="sellpast__flexcontainer" style="flex-wrap: wrap; flex-direction: row-reverse;">
+            <div class="main-img"
+                style="background-image: url({% static 'images/strongbow-removebg-preview.png' %}); background-size: contain;">
+            </div>
+            <div class="sellpast-info">
+                <p class="sellpast-info__title">Đôi khi là tuổi trẻ</p>
+                <p class="sellpast-info__content">Tình buồn không phải lúc nào cũng chỉ để quên đi...</p>
+                <div class="sellpast__buy-button"><a href="#">1 giọt</a></div>
+            </div>
+
+        </div>
+    </section>
+    <section class="hitachi">
+        <div class="hitachi__title-img">
+            <img src="{% static 'images/Presentation1.jpg' %}" alt="">
+        </div>
+        <div class="sellpast-info">
+            <p class="sellpast-info__title">Và khi trưởng thành...</p>
+            <p class="sellpast-info__content">Là lúc bạn thấy hối tiếc và nhiều nỗi đau.</p>
+            <div class="sellpast__buy-button"><a href="#">1 giọt</a></div>
+        </div>
+    </section>
+    <footer>
+        <div class="copyright">
+            <p>Cu Xin © 2020</p>
+            bản quyền thuộc về Xin <span class="copyright__line">và những người bạn</span>
+        </div>
+    </footer>
+</body>
+
+</html>
