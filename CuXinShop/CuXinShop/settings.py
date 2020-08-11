@@ -37,8 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'theblog.apps.TheblogConfig'
+    'theblog.apps.TheblogConfig',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
