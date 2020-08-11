@@ -16,12 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/colors.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="preload" as="image" href="/resources/img/sarah-dorweiler-2s9aHF4eCjI-unsplash-min.jpg">
-    <link rel="preload" as="image" href="/resources/img/alex-loup-mwINQsW2KJs-unsplash-min.jpg">
     <link rel="preload" as="image" href="/resources/img/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg">
-    <link rel="preload" as="image" href="/resources/img/sarah-dorweiler-x2Tmfd1-SgA-unsplash-min.jpg">
-    <link rel="preload" as="image" href="/resources/img/annie-spratt-GJJo0gb7bfY-unsplash-min.jpg">
-    <link rel="preload" as="image" href="/resources/img/kari-shea-tcgMBsW4zlU-unsplash-min.jpg">
 </head>
 
 <body>
@@ -30,11 +25,21 @@
             <h1>This is <span style="text-decoration: line-through;">not</span> an ecommerce site</h1>
             <h2>It was created with lightning speed page loading speed</h2>
             <div class="header__buttons">
-                <a class="header__buttons-main-button" href="#">shopping now</a>
+                <a class="header__buttons-main-button" href="#sale">shopping now</a>
             </div>
         </div>
     </header>
-    <section class="sale">
+    <section class="navi" style="padding-top: 0px">
+        <ul class="menubar__navibar">
+            <li><a href="#cuxinshop">Cu Xin Shop</a></li>
+            <li><a href="list_article/with_tag/chuyendemtrua">Chuyện đêm trưa</a></li>
+            <li><a href="">Thời đi học</a></li>
+            <li><a href="">Chuyện Coding</a></li>
+            <li><a href="">Tự kỷ</a></li>
+            <li><a href="">Tất cả</a></li>
+        </ul>
+    </section>
+    <section id="sale" class="sale">
         <div class="sale__title">
             <p>#hangtonkho</p>
             <p>Không thích thì mua</p>
@@ -130,7 +135,11 @@
             </div>
         </div>
     </section>
-    <section class="sellpast">
+    <section id="cuxinshop" class="sellpast">
+        <div class="sale__title">
+            <p>#cuxinshop</p>
+            <p>Cu Xin Shop</p>
+        </div>
         <div class="sellpast__flexcontainer">
             <div class="main-img" style="background-image: url({% static 'images/friends.png' %});">
             </div>
@@ -153,16 +162,16 @@
 
         </div>
     </section>
-    <section class="hitachi">
-        <div class="hitachi__title-img">
-            <img src="{% static 'images/Presentation1.jpg' %}" alt="">
-        </div>
-        <div class="sellpast-info">
-            <p class="sellpast-info__title">Và khi trưởng thành...</p>
-            <p class="sellpast-info__content">Là lúc bạn thấy hối tiếc và nhiều nỗi đau.</p>
-            <div class="sellpast__buy-button"><a href="#">1 giọt</a></div>
-        </div>
-    </section>
+<!--    <section class="hitachi">-->
+<!--        <div class="hitachi__title-img">-->
+<!--            <img src="{% static 'images/Presentation1.jpg' %}" alt="">-->
+<!--        </div>-->
+<!--        <div class="sellpast-info">-->
+<!--            <p class="sellpast-info__title">Và khi trưởng thành...</p>-->
+<!--            <p class="sellpast-info__content">Là lúc bạn thấy hối tiếc và nhiều nỗi đau.</p>-->
+<!--            <div class="sellpast__buy-button"><a href="#">1 giọt</a></div>-->
+<!--        </div>-->
+<!--    </section>-->
     <footer>
         <div class="copyright">
             <p>Cu Xin © 2020</p>
