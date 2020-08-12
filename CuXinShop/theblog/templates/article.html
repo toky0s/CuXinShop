@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>{{ article.content|safe }}</p>
-</body>
-</html>
+{% extends "base_view_list_article.html" %}
+
+{% block title %}
+{{ article.title }}
+{% endblock%}
+
+{% block main %}
+<section class="header">
+        <div class="article__tag">
+            <ul>
+                {% for tag in article.tags.all %}
+                <li><a href="{% url 'theblog:detail_tag' tag.tag_name %}">#{{tag.tag_name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="header__title">
+            <h1>{{ article.title }}</h1>
+        </div>
+        <div class="header__timepub">
+            <p>Public time<span>| {{ article.pub_date|date:'H:i' }} | {{ article.pub_date|date:'d-m-Y' }} | </span>Views <span>{{ article.view }}</span></p>
+        </div>
+    </section>
+    <section class="article-detail">
+        <p>{{ article.content|safe }}</p>
+    </section>
+    <section class="active-button">
+        <a href="#" class="button">< PREVIOUS</a>
+        <a href="#" class="button">GO TO TOP</a>
+        <a href="#" class="button">NEXT ></a>
+    </section>
+{% endblock%}
