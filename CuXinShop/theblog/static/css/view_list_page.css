@@ -69,6 +69,16 @@ section {
     font-size: 50px;
 }
 
+.header__timepub {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+}
+
+.header__timepub span {
+    letter-spacing: 3px;
+    padding-left: 10px;
+}
+
 /* ######### ARTICLE ########## */
 .flex-container {
     display: flex;
@@ -150,6 +160,49 @@ section {
     background-color: black;
     color: white;
 }
+
+
+/* ###### article detail ###### */
+.article-detail {
+    max-width: 57%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 27px;
+}
+
+.active-button {
+    text-align: center;
+}
+
+.active-button {
+    text-align: center;
+}
+
+.active-button .button {
+    text-decoration: none;
+    color: black;
+    width: 177px;
+    min-height: 40px;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 1px solid black;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    font-size: 15px;
+    margin-top: 17px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.active-button .button:hover {
+    background-color: black;
+    color: white;
+}
+
+/* ###### footer ######*/
 
 footer {
     clear: both;
