@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/view_list_page.css' %}">
     <link rel="icon" href="{% static 'images/axin.jpg' %}" >
-    <title>{% block title %} {% endblock %}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
@@ -18,12 +18,12 @@
 <body>
     <header>
         <ul class="menubar__navibar">
-            <li><a href="/#cuxinshop">Cu Xin Shop</a></li>
-            <li><a href="list_article/with_tag/chuyendemtrua">Chuyện đêm trưa</a></li>
-            <li><a href="list_article/with_tag/thoidihoc">Thời đi học</a></li>
-            <li><a href="list_article/with_tag/chuyencoding">Chuyện Coding</a></li>
-            <li><a href="list_article/with_tag/tuky">Tự kỷ</a></li>
-            <li><a href="list_article/with_tag/all">Tất cả</a></li>
+            <li><a href="{% url 'theblog:home' %}">Cu Xin Shop</a></li>
+            <li><a href="{% url 'theblog:list_article_with_tag' 'chuyendemtrua' %}">Chuyện đêm trưa</a></li>
+            <li><a href="{% url 'theblog:list_article_with_tag' 'thoidihoc' %}">Thời đi học</a></li>
+            <li><a href="{% url 'theblog:list_article_with_tag' 'chuyencoding' %}">Chuyện Coding</a></li>
+            <li><a href="{% url 'theblog:list_article_with_tag' 'tuky' %}">Tự kỷ</a></li>
+            <li><a href="{% url 'theblog:list_article' %}">Tất cả</a></li>
         </ul>
     </header>
     {% block main %}
