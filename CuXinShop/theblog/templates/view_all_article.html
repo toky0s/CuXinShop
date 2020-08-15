@@ -1,8 +1,14 @@
-{% extends "base_view_list_article.html" %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 All
 {% endblock%}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/view_all_article.css' %}">
+{% endblock%}
+
 
 {% block main %}
 <section class="header">
@@ -13,9 +19,11 @@ All
             <h1>All</h1>
         </div>
 </section>
-    <section class="list-article-with-tag">
+    <section class="article-container">
         {% for article in articles %}
         <div class="article">
+            <div class="article__thumbnail" style="background-image: url({{ article.thumbnail_image.url }}); width: 200px;">
+            </div>
                 <div class="article__content">
                     <div class="article__tag">
                         <ul>
@@ -25,7 +33,7 @@ All
                         </ul>
                     </div>
                     <div class="article__title-article">
-                        <p>{{ article.title }} | {{ article.pub_date|date:'d - m - Y' }}</p>
+                        <p>{{ article.title }}</p>
                     </div>
                     <div class="article__descrip">
                         <p>{{ article.content|striptags|safe|truncatewords:20 }}</p>
