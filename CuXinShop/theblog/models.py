@@ -10,6 +10,7 @@ class Tag(models.Model):
     tag_full_name = models.CharField(max_length=100, default='Fullname is none')
     pub_date = models.DateTimeField('Public date')
     description = models.TextField()
+    view = models.IntegerField(default=0)
 
     def __str__(self):
         return self.tag_name
@@ -17,11 +18,14 @@ class Tag(models.Model):
     def get_raw_name(self):
         return unidecode(self.tag_full_name)
 
+    def get_number_article(self):
+        return len(self.article_set.all())
+
 
 class Article(models.Model):
-
     tags = models.ManyToManyField(Tag)
     title = models.CharField(max_length=200)
+    thumbnail_image = models.ImageField(upload_to='thumbs', editable=True, blank=True, null=True)
     pub_date = models.DateTimeField('Public date', auto_now_add=True)
     content = RichTextUploadingField(blank=False)
     view = models.IntegerField(default=0)
