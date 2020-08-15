@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Cú lừa
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/joke.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Athiti:wght@300&family=Cormorant+Garamond&family=Pattaya&family=Questrial&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<section>
+    <h1 class="joke__title">Cú lừa thôi men, ở đây đéo bán gì cả</h1>
+    <img src="{% static 'images/joke.png' %}" alt="Cú lừa">
+    <p>Bạn nhìn thấy ảnh chứ, nó có nói là <span>trang này đéo phải trang thương mại điện tử, nó được tạo ra với tốc độ load trang thần tốc</span></p>
+    <p>Khi khác rút kinh nghiệm nghen, click vào nút bên dưới để tiếp tục mua sắm. Chúc vui!</p>
+    <a href="{% url 'theblog:home' %}" class="button">quay lại trang chủ</a>
+</section>
+{% endblock %}
