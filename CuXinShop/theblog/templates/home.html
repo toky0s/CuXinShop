@@ -14,8 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="preload" as="image" href="/resources/img/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg">
 </head>
 
@@ -25,11 +24,11 @@
             <h1>This is <span style="text-decoration: line-through;">not</span> an ecommerce site</h1>
             <h2>It was created with lightning speed page loading speed</h2>
             <div class="header__buttons">
-                <a class="header__buttons-main-button" href="#sale">shopping now</a>
+                <a class="header__buttons-main-button" onclick="gotoNavBar()">shopping now</a>
             </div>
         </div>
     </header>
-    <section class="navi" style="padding-top: 0px">
+    <section id="navbar" class="navi" style="padding-top: 0px">
         <ul class="menubar__navibar">
             <li><a href="#cuxinshop">Cu Xin Shop</a></li>
             <li><a href="list_article/with_tag/chuyendemtrua">Chuyện đêm trưa</a></li>
@@ -37,9 +36,10 @@
             <li><a href="list_article/with_tag/chuyencoding">Chuyện Coding</a></li>
             <li><a href="list_article/with_tag/tuky">Tự kỷ</a></li>
             <li><a href="list_article/">Tất cả</a></li>
+            <li><a href="list_tag/">Tags</a></li>
         </ul>
     </section>
-    <section id="sale" class="sale">
+    <section class="sale">
         <div class="sale__title">
             <p>#hangtonkho</p>
             <p>Không thích thì mua</p>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="item__button">
-                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                    <div class="item__buy-button"><a href="{% url 'theblog:joke' %}">mua ngay</a></div>
                 </div>
             </div>
             <div class="item">
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <div class="item__button">
-                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                    <div class="item__buy-button"><a href="{% url 'theblog:joke' %}">mua ngay</a></div>
                 </div>
             </div>
             <div class="item">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <div class="item__button">
-                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                    <div class="item__buy-button"><a href="{% url 'theblog:joke' %}">mua ngay</a></div>
                 </div>
             </div>
             <div class="item">
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="item__button">
-                    <div class="item__buy-button"><a href="#">mua ngay</a></div>
+                    <div class="item__buy-button"><a href="{% url 'theblog:profile' %}">mua ngay</a></div>
                 </div>
             </div>
         </div>
@@ -159,25 +159,20 @@
                 <p class="sellpast-info__content">Tình buồn không phải lúc nào cũng chỉ để quên đi...</p>
                 <div class="sellpast__buy-button"><a href="#">1 giọt</a></div>
             </div>
-
         </div>
     </section>
-<!--    <section class="hitachi">-->
-<!--        <div class="hitachi__title-img">-->
-<!--            <img src="{% static 'images/Presentation1.jpg' %}" alt="">-->
-<!--        </div>-->
-<!--        <div class="sellpast-info">-->
-<!--            <p class="sellpast-info__title">Và khi trưởng thành...</p>-->
-<!--            <p class="sellpast-info__content">Là lúc bạn thấy hối tiếc và nhiều nỗi đau.</p>-->
-<!--            <div class="sellpast__buy-button"><a href="#">1 giọt</a></div>-->
-<!--        </div>-->
-<!--    </section>-->
     <footer>
         <div class="copyright">
-            <p>Cu Xin © 2020</p>
+            <p>Cu Xin Shop © 2020</p>
             bản quyền thuộc về Xin <span class="copyright__line">và những người bạn</span>
         </div>
     </footer>
+    <script>
+    function gotoNavBar() {
+        var elmnt = document.getElementById("navbar");
+        elmnt.scrollIntoView();
+    }
+    </script>
 </body>
 
 </html>

@@ -5,9 +5,11 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/view_list_page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="icon" href="{% static 'images/axin.jpg' %}" >
     <title>{% block title %}{% endblock %}</title>
+    {% block link %}
+    {% endblock %}
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
@@ -24,6 +26,7 @@
             <li><a href="{% url 'theblog:list_article_with_tag' 'chuyencoding' %}">Chuyện Coding</a></li>
             <li><a href="{% url 'theblog:list_article_with_tag' 'tuky' %}">Tự kỷ</a></li>
             <li><a href="{% url 'theblog:list_article' %}">Tất cả</a></li>
+            <li><a href="{% url 'theblog:list_tag' %}">Tags</a></li>
         </ul>
     </header>
     {% block main %}
@@ -35,6 +38,8 @@
             bản quyền thuộc về Xin <span class="copyright__line">và những người bạn</span>
         </div>
     </footer>
+{% block script %}
+{% endblock %}
 </body>
 
 </html>
