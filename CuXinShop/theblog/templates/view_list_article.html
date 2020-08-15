@@ -1,8 +1,15 @@
-{% extends "base_view_list_article.html" %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 {{ tag.tag_full_name }}
 {% endblock%}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/view_all_article.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Athiti:wght@300&family=Cormorant+Garamond&family=Pattaya&family=Questrial&display=swap" rel="stylesheet">
+{% endblock%}
+
 
 {% block main %}
 <section class="header">
@@ -10,12 +17,14 @@
             <p>#{{ tag.tag_name }}</p>
         </div>
         <div class="header__title">
-            <h1>{{ tag.get_raw_name }}</h1>
+            <h1>{{ tag.tag_full_name }}</h1>
         </div>
-    </section>
-    <section class="list-article-with-tag">
+</section>
+    <section class="article-container">
         {% for article in articles %}
         <div class="article">
+            <div class="article__thumbnail" style="background-image: url({{ article.thumbnail_image.url }}); width: 200px;">
+            </div>
                 <div class="article__content">
                     <div class="article__tag">
                         <ul>
@@ -25,7 +34,7 @@
                         </ul>
                     </div>
                     <div class="article__title-article">
-                        <p>{{ article.title }} | {{ article.pub_date|date:'d - m - Y' }}</p>
+                        <p>{{ article.title }}</p>
                     </div>
                     <div class="article__descrip">
                         <p>{{ article.content|striptags|safe|truncatewords:20 }}</p>
