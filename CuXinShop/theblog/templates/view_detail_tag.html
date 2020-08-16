@@ -5,6 +5,10 @@
 {{ tag.tag_full_name }}
 {% endblock %}
 
+{% block meta %}
+<meta name="Description" content="Mô tả chi tiết về nội dung của tag {{ tag.tag_full_name }}">
+{% endblock %}
+
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/view_detail_tag.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap" rel="stylesheet">
@@ -13,14 +17,17 @@
 {% endblock %}
 
 {% block main %}
-    <section class="tag-overview">
-        <p class="tag-overview__tag-name">#{{ tag.tag_name }}</p>
-        <h1 class="tag-overview__tag-full-name">{{ tag.tag_full_name }}</h1>
-        <p class="tag-overview__pubdate">{{ tag.pub_date|date:'d-m-Y' }}</p>
-    </section>
+<article>
+    <header class="tag-overview">
+        <div class="tag-overview__tag-name"><p>#{{ tag.tag_name }}</p></div>
+        <div class="tag-overview__tag-full-name"><h1>{{ tag.tag_full_name }}</h1></div>
+        <div class="tag-overview__pubdate"><p>Public time | {{ tag.pub_date|date:'H:i d-m-Y' }} | View {{ tag.view }}</p></div>
+    </header>
     <section class="description">
         <p class="description__content">
             {{ tag.description }}
         </p>
     </section>
+</article>
+
 {% endblock %}

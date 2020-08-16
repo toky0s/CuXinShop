@@ -3,7 +3,11 @@
 
 {% block title %}
 {{ article.title }}
-{% endblock%}
+{% endblock %}
+
+{% block meta %}
+<meta name="Description" content="Bài viết {{ article.title }} thuộc thể loại {{ tag_with_view_highest.tag_full_name }}: {{ article.content|striptags|safe|truncatewords:125 }}">
+{% endblock %}
 
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/view_detail_article.css' %}">
@@ -12,25 +16,23 @@
 
 {% block main %}
 <article>
-        <section class="header">
+    <header class="header">
         <div class="article__tag">
             <ul>
-
                 {% for tag in article.tags.all %}
-                <li><a href="{% url 'theblog:detail_tag' tag.tag_name %}">#{{tag.tag_name}}</a></li>
+                <li><a href="{% url 'theblog:list_article_with_tag' tag.tag_name %}">#{{tag.tag_name}}</a></li>
                 {% endfor %}
-
             </ul>
         </div>
         <div class="header__title">
             <h1>{{ article.title }}</h1>
         </div>
         <div class="header__timepub">
-            <p>Public time | {{ article.pub_date|date:'H:i' }} | {{ article.pub_date|date:'d-m-Y' }} | View {{ article.view }}</p>
+            <p>Public time | <time datetime="{{ article.pub_date|date:'Y-m-d H:i' }}">{{ article.pub_date|date:'H:i d-m-Y' }}</time> | View {{ article.view }}</p>
         </div>
-    </section>
+    </header>
     <section class="article-detail">
-        {{ article.content|safe }}
+        <main>{{ article.content|safe }}</main>
     </section>
     <aside class="active-button">
         <a href="{% url 'theblog:detail_article' previous_article.slug %}" class="button">< PREVIOUS</a>

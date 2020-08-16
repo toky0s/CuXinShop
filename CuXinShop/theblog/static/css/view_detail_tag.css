@@ -4,13 +4,15 @@ section {
     padding-top: 77px;
 }
 
+.tag-overview {
+    margin-top: 77px;
+    text-align: center;
+}
+
 .tag-overview__tag-name {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
-    color: #636e72;
     font-size: 20px;
-    width: 95%;
-    max-width: 77%;
     line-height: 40px;
 }
 
@@ -22,14 +24,11 @@ section {
 .tag-overview__pubdate {
     font-family: 'Athiti', sans-serif;
     font-weight: 300;
-    color: #636e72;
     font-size: 20px;
-    width: 95%;
-    max-width: 77%;
     line-height: 40px;
 }
 
 .description__content {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 37px;
+    font-size: 27px;
 }
