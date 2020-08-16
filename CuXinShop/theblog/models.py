@@ -35,6 +35,9 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+    def get_number(self):
+        return len(self.objects.all())
+
     def save(self, *args, **kwargs):
         self.slug = slugify(unidecode(self.title))
         self.last_modify = datetime.now()
