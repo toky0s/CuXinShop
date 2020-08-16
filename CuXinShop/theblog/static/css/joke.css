@@ -1,4 +1,4 @@
-section {
+article {
     text-align: center;
     margin: 77px;
 }
@@ -8,12 +8,12 @@ section {
     font-size: 77px;
 }
 
-section p {
+p {
     font-family: 'Cormorant Garamond', serif;
     font-size: 27px;
 }
 
-section span {
+span {
     font-weight: bold;
 }
 

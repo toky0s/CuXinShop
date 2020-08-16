@@ -5,17 +5,85 @@
 Cú lừa
 {% endblock %}
 
+{% block meta %}
+<meta name="Description" content="Cu Xin Shop: đây chỉ là một cú lừa">
+<meta name=”robots” content=”noodp,nofollow,noindex,nocache” />
+{% endblock %}
+
 {% block link %}
 <link rel="stylesheet" href="{% static 'css/joke.css' %}">
-<link href="https://fonts.googleapis.com/css2?family=Athiti:wght@300&family=Cormorant+Garamond&family=Pattaya&family=Questrial&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Athiti:wght@300&family=Cormorant+Garamond&family=Pattaya&family=Questrial&display=swap"
+    rel="stylesheet">
 {% endblock %}
 
 {% block main %}
-<section>
-    <h1 class="joke__title">Cú lừa thôi men, ở đây đéo bán gì cả</h1>
-    <img src="{% static 'images/joke.png' %}" alt="Cú lừa">
-    <p>Bạn nhìn thấy ảnh chứ, nó có nói là <span>trang này đéo phải trang thương mại điện tử, nó được tạo ra với tốc độ load trang thần tốc</span></p>
-    <p>Khi khác rút kinh nghiệm nghen, click vào nút bên dưới để tiếp tục mua sắm. Chúc vui!</p>
-    <a href="{% url 'theblog:home' %}" class="button">quay lại trang chủ</a>
-</section>
+<article>
+    <main>
+        <h1 class="joke__title">Cú lừa thôi men, ở đây đéo bán gì cả</h1>
+        <p>Bạn nhìn thấy ảnh chứ, nó có nói là <span>trang này đéo phải trang thương mại điện tử, nó được tạo ra
+                với tốc độ load trang thần tốc</span></p>
+        <p>Khi khác rút kinh nghiệm nghen, click vào nút bên dưới để tiếp tục mua sắm. Chúc vui!</p>
+        <aside><a href="{% url 'theblog:home' %}" class="button">quay lại trang chủ</a></aside>
+        <p style="margin-top: 77px">[Verse 1]<br>
+            Vậy là tròn một năm bên nhau<br>
+            Ngọt ngào rực rỡ như đang được sống lại tình đầu<br>
+            Người ta cứ khen anh đa tình đến thế<br>
+            Mà sao lúc yêu em si tình đến thế<br>
+            <br>
+            Bọn mình thật hợp mà phải không anh ơi<br>
+            Một người ưa nói như em lại thích người kiệm lời<br>
+            Người mà lúc bên em hay ở bên ai thì cũng tắt chuông điện thoại<br>
+            <br>
+            [Chorus]<br>
+            Lúc anh chạm môi cô ta anh có ngần ngại<br>
+            Có ngần ngại không hay miên man nhớ mãi<br>
+            Trả lời đi hương nước hoa thơm mùi gì len giữa chúng ta<br>
+            Em trao anh con tim sao anh trao cho em một cú lừa<br>
+            <br>
+            [Drop]<br>
+            La-la-la-la-la-la<br>
+            La-la-la-la-la-la<br>
+            La-la-la-la-la-la<br>
+            <br>
+            [Verse 2]<br>
+            Nào là mình đừng buông tay ra<br>
+            Nào là anh ước hai ta rồi sẽ về một nhà<br>
+            Người ta cứ khen anh đa tình đến thế<br>
+            Mà sao lúc yêu em si tình...<br>
+
+            Một người phải vờ như ngây thơ<br>
+            Một người nói dối quá tồi<br>
+            Tình yêu với em như ngôi đền thiêng liêng<br>
+            Giờ em chẳng muốn cầu nguyện<br>
+            <br>
+            [Chorus]<br>
+            Biết đâu được hai ta sớm có kết cục buồn<br>
+            Nỗi đau này em đưa cho cơn gió cuốn<br>
+            Điều gì xảy ra với em mong rằng đừng xảy ra với anh<br>
+            Thôi ta chia tay đi nhưng riêng em sẽ không phải tiếc gì<br>
+            <br>
+            [Drop]<br>
+            La-la-la-la-la-la<br>
+            La-la-la-la-la-la<br>
+            La-la-la-la-la-la<br>
+            <br>
+            [Bridge]<br>
+            Lúc anh chạm môi cô ta anh có ngần ngại<br>
+            Có ngần ngại không hay miên man nhớ mãi<br>
+            Điều gì đã quyến rũ anh, ôi điều gì đã đánh cắp anh<br>
+            Em trao anh con tim sao anh trao cho em...<br>
+            <br>
+            [Chorus]<br>
+            Biết đâu được hai ta sớm có kết cục buồn<br>
+            Nỗi đau này em đưa cho cơn gió cuốn<br>
+            Điều gì xảy ra với em mong rằng đừng xảy ra với anh<br>
+            Em trao anh con tim sao anh trao cho em một cú lừa<br>
+            <br>
+            [Outro]<br>
+            La-la-la-la-la-la<br>
+            La-la-la-la-la-la<br>
+            La-la-la-la-la-la</p>
+    </main>
+</article>
 {% endblock %}
