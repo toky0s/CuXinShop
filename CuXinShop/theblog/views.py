@@ -1,8 +1,5 @@
-from django.shortcuts import HttpResponse, render, get_object_or_404, get_list_or_404
-from django.core.exceptions import ObjectDoesNotExist
-from django.http import Http404
+from django.shortcuts import HttpResponse, render, get_object_or_404, Http404
 from .models import Article, Tag
-from django.views.generic import DetailView, ListView
 
 
 def get_next_or_prev(models: object, item: Article, direction: str = 'next') -> object:
@@ -21,8 +18,17 @@ def get_next_or_prev(models: object, item: Article, direction: str = 'next') -> 
     return False
 
 
+def get_object_with_view_highest(objects):
+    result = None
+    view = 0
+    for object in objects:
+        view_tem = object.view
+        if view_tem > view:
+            result = object
+    return result
+
 def home(request):
-    return render(request, 'home.html', {})
+    return render(request, 'home.html')
 
 
 def detail_article(request, slug):
@@ -30,9 +36,17 @@ def detail_article(request, slug):
     article.view += 1
     article.save()
     models = Article.objects.all()
+
+    tag_with_view_highest = get_object_with_view_highest(article.tags.all())
     next_article = get_next_or_prev(models, article)
     previous_article = get_next_or_prev(models, article, 'prev')
-    return render(request,'view_detail_article.html', context={'article': article,'next_article': next_article, 'previous_article': previous_article})
+
+    context = {'article': article,
+               'next_article': next_article,
+               'previous_article': previous_article,
+               'tag_with_view_highest': tag_with_view_highest}
+
+    return render(request,'view_detail_article.html', context=context)
 
 
 def detail_tag(request, tag_name):
@@ -43,8 +57,15 @@ def detail_tag(request, tag_name):
 
 
 def list_article(request):
-    articles = get_list_or_404(Article)
-    return render(request, 'view_all_article.html', context={'articles':articles})
+    articles = Article.objects.all()
+    if articles.count() == 0:
+        return Http404()
+
+    class AllTag:
+        tag_name = 'all'
+        tag_full_name = 'Tất cả'
+    tag = AllTag()
+    return render(request, 'view_list_article.html', context={'tag': tag, 'articles':articles})
 
 
 def list_tag(request):
@@ -61,4 +82,4 @@ def joke(request):
     return render(request, 'joke.html')
 
 def profile(request):
-    return HttpResponse('profile xin')
+    return render(request, 'profile.html')
