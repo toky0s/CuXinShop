@@ -8,12 +8,12 @@ article {
     font-size: 77px;
 }
 
-p {
+.joke__content {
     font-family: 'Cormorant Garamond', serif;
     font-size: 27px;
 }
 
-span {
+.bold {
     font-weight: bold;
 }
 

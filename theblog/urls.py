@@ -9,6 +9,6 @@ urlpatterns = [
     path('list_article/', views.list_article, name='list_article'),
     path('list_tag/', views.list_tag, name='list_tag'),
     path('list_article/with_tag/<str:tag_name>/', views.list_article_with_tag, name='list_article_with_tag'),
-    path('culua/', views.joke, name='joke'),
+    path('joke/', views.joke, name='joke'),
     path('profile/', views.profile, name='profile')
 ]
