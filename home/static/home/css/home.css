@@ -20,9 +20,10 @@ img {
 
 header {
     height: 100vh;
-    background-image: url("/static/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg");
+    background-image: url('../images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -97,7 +98,7 @@ header {
 }
 
 section {
-    padding-top: 100px;
+    padding-top: 57px;
 }
 
 .menubar__navibar {
@@ -242,7 +243,7 @@ section {
 .sellpast__flexcontainer .main-img {
     width: 400px;
     height: 400px;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     position: relative;
 }
