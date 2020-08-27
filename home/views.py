@@ -15,10 +15,10 @@ def register(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('home:register_success'))
-    return render(request, 'home/register.html', context={'form': form})
+    return render(request, 'registration/register.html', context={'form': form})
 
 
 def register_success(request):
-    return HttpResponse('dang ky thanh cong')
+    return render(request, template_name='registration/register_success.html')
 
 
