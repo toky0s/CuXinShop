@@ -11,8 +11,8 @@
     {% block meta %}
     {% endblock %}
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="icon" href="{% static 'images/axin.jpg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'theblog/css/base.css' %}">
+    <link rel="icon" href="{% static 'theblog/images/axin.jpg' %}" type="image/x-icon">
     {% block link %}
     {% endblock %}
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
     <header>
         <nav>
             <ul class="menubar__navibar">
-                <li><a href="{% url 'theblog:home' %}">Cu Xin Shop</a></li>
+                <li><a href="/">Cu Xin Shop</a></li>
                 <li><a href="{% url 'theblog:list_article_with_tag' 'chuyendemtrua' %}">Chuyện đêm trưa</a></li>
                 <li><a href="{% url 'theblog:list_article_with_tag' 'thoidihoc' %}">Thời đi học</a></li>
                 <li><a href="{% url 'theblog:list_article_with_tag' 'chuyencoding' %}">Chuyện Coding</a></li>

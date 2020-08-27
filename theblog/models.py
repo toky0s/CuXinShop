@@ -1,8 +1,35 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
 from unidecode import unidecode
 from datetime import datetime
+
+
+def get_next_or_prev(models: object, item, direction: str = 'next') -> object:
+    getit = False
+    if direction == 'prev':
+        models = models.reverse()
+    for m in models:
+        if getit:
+            return m
+        if item == m:
+            getit = True
+    if getit:
+        # This would happen when the last
+        # item made getit True
+        return models[0]
+    return False
+
+
+def get_object_with_view_highest(objects):
+    result = None
+    view = 0
+    for __object in objects:
+        view_tem = __object.view
+        if view_tem > view:
+            result = __object
+    return result
 
 
 class Tag(models.Model):
@@ -38,7 +65,24 @@ class Article(models.Model):
     def get_number(self):
         return len(self.objects.all())
 
+    def get_number_comment(self):
+        return len(self.comments.all())
+
+    def get_comment_latest(self):
+        return self.comments.all().order_by('-date')
+
     def save(self, *args, **kwargs):
         self.slug = slugify(unidecode(self.title))
         self.last_modify = datetime.now()
         super().save(*args, **kwargs)
+
+
+class Comment(models.Model):
+
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return 'Article: {} {}'.format(self.article.title, self.author.username)
