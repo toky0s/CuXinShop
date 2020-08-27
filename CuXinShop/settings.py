@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'theblog.apps.TheblogConfig',
+    'home.apps.HomeConfig',
     'ckeditor',
     'ckeditor_uploader',
 ]
@@ -125,3 +127,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+AUTH_USER_MODEL = 'auth.User'
+
+LOGIN_URL = '/login'     # this should coinside with url pattern of login view
+LOGOUT_URL = '/logout'   # same but for logout view
+LOGIN_REDIRECT_URL = '/#sale'
