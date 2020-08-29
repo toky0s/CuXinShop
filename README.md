@@ -1,1 +1,2 @@
-# CuXinShop
+# Cu Xin Shop
+This is a blog.

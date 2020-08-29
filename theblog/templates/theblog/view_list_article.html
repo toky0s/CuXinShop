@@ -30,7 +30,11 @@
 <section class="article-container">
     {% for article in articles %}
     <div class="article">
+        {% if article.thumbnail_image %}
         <div class="article__thumbnail" style="background-image: url({{ article.thumbnail_image.url }}); width: 200px;">
+        {% else %}
+        <div class="article__thumbnail" style="background-image: url({% static 'theblog/images/article_thumb_default.jpg' %}); width: 200px;">
+        {% endif %}
         </div>
         <div class="article__content">
             <div class="article__tag">
